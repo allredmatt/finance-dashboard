@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/api"
+  to = "https://query1.finance.yahoo.com"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
