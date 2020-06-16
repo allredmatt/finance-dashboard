@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 
-const url = '/v8/finance/chart/'
+const url = 'https://query1.finance.yahoo.com/v8/finance/chart/'
 const corsDomain = "localhost:3000"
 
 export const useFetch = (params) => {
