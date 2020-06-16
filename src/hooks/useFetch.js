@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 
-const url = 'api/v8/finance/chart/'
+const url = 'api/'
 
 export const useFetch = (params) => {
     const [data, setData] = useState('')
