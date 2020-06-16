@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/api"
+  from = "/api/*"
   to = "https://query1.finance.yahoo.com"
   status = 200
   force = true
