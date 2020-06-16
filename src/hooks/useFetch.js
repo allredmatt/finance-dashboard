@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react'
 
-const url = 'https://query1.finance.yahoo.com/v8/finance/chart/'
-const corsDomain = "localhost:3000"
+const url = '/v8/finance/chart/'
 
 export const useFetch = (params) => {
     const [data, setData] = useState('')
@@ -11,7 +10,7 @@ export const useFetch = (params) => {
 
     const currentTime = Math.floor(Date.now()/1000);
 
-    const extras = `?period1=${currentTime - 2592000}&period2=${currentTime}&interval=15m&corsDomain=${corsDomain}`
+    const extras = `?period1=${currentTime - 2592000}&period2=${currentTime}&interval=15m`
 
     const roundToOne = number => Math.round(number*10)/10
     
