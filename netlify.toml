@@ -1,6 +1,48 @@
 [[redirects]]
-  from = "/api/"
-  to = "https://query1.finance.yahoo.com/v8/finance/chart/"
+  from = "/api/LTC-GBP"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/LTC-GBP"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/api/BTC-GBP"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/BTC-GBP"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/api/%5EFTSE"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/%5EFTSE"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/api/0P0000WDRR.L"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/0P0000WDRR.L"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/api/0P00012PN5.L"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/0P00012PN5.L"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/api/0P0000SVHO.L"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/0P0000SVHO.L"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+    
+[[redirects]]
+  from = "/api/0P00016NX6.L"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/0P00016NX6.L"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
