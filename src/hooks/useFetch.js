@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 
-const url = 'api/'
+const url = 'api/'  //need this in build version
+//const url = '/v8/finance/chart/' //need for development server
 
 export const useFetch = (params) => {
     const [data, setData] = useState('')
@@ -13,10 +14,10 @@ export const useFetch = (params) => {
     const extras = `?period1=${currentTime - 2592000}&period2=${currentTime}&interval=15m`
 
     const roundToOne = number => Math.round(number*10)/10
-    
-    useEffect( () =>{
-      let localMin = Number.MAX_SAFE_INTEGER;
-      let localMax = 0;
+
+    const collectDataFromServer = () => {
+        let localMin = Number.MAX_SAFE_INTEGER;
+        let localMax = 0;
         fetch(url+params+extras)
         .then(response => response.json())
         .then((data) => {
@@ -40,6 +41,14 @@ export const useFetch = (params) => {
           }
           setPreviousVal(roundToOne(sumOfLast10/countItems))
         })
+    }
+    
+    useEffect( () =>{
+      collectDataFromServer()
+      const interval = setInterval(() => {
+        collectDataFromServer()
+      }, 30000);
+      return () => clearInterval(interval);
     },[])
  
     return {
