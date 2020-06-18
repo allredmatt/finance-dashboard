@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useFetch} from './hooks/useFetch.js'
 import {SvgTemplate} from './componants/pricechart.js'
 import './App.css';
