@@ -1,6 +1,6 @@
 import React from 'react';
 import {useFetch} from './hooks/useFetch.js'
-import {SvgTemplate} from './componants/pricechart.js'
+import {SvgTemplate} from './components/pricechart.js'
 import './App.css';
 
 function App() {
@@ -24,6 +24,9 @@ function App() {
 
   return (
     <div className="App">
+      <h1>
+        Quick Glance Finance Dash
+      </h1>
       {financeArray.map(entry => 
       <SvgTemplate  
         min={entry.min} 

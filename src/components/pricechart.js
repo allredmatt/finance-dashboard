@@ -19,8 +19,8 @@ export function SvgTemplate ({data, max, min, name, logo, previous}) {
         //80 is max Height  45 is min Height, range of 35
 
         dataBar.jsx = <>
-                        <text x="18" y={dataBar.textHeight} fill="black">Cur: {data}</text>
-                        <path stroke="black" d={dataBar.barHeight} />
+                        <text x="10" y={dataBar.textHeight} fill="white">Price: {data}</text>
+                        <path stroke="white" d={dataBar.barHeight} />
                     </>
     
     let strokeColour = "black";
@@ -32,8 +32,29 @@ export function SvgTemplate ({data, max, min, name, logo, previous}) {
 
     return(
         <svg key={name} height="140" width="120" style={{marginLeft:"2px", marginRight:"2px", marginTop:"2px"}}>
+            <defs>
+                <linearGradient id="linearGradient" gradientTransform="rotate(90)">
+                    <stop offset="0%"   stop-color="#6f0dee"/>
+                    <stop offset="10%"  stop-color="#4d45f8"/>
+                    <stop offset="20%"  stop-color="#2460fd"/>
+                    <stop offset="30%"  stop-color="#0075fb"/>
+                    <stop offset="40%"  stop-color="#0086f6"/>
+                    <stop offset="50%"  stop-color="#0097f9"/>
+                    <stop offset="60%"  stop-color="#00a6f8"/>
+                    <stop offset="70%"  stop-color="#00b4f5"/>
+                    <stop offset="80%"  stop-color="#00c7fa"/>
+                    <stop offset="90%"  stop-color="#00d9fa"/>
+                    <stop offset="100%" stop-color="#2cebf7"/>
+                </linearGradient>
+            </defs>
             <g fill="none">
-                <rect x="0" y="0" width="120" height="140" style={{fill:"blue", stroke:strokeColour, strokeWidth:5, fillOpacity:0.1, strokeOpacity:0.9}} />
+                <rect x="0" y="0" width="120" height="140" style={{
+                    fill: 'url(#linearGradient)', 
+                    stroke: strokeColour, 
+                    strokeWidth:5, 
+                    fillOpacity:0.6, 
+                    strokeOpacity:0.9}
+                } />
                 <image href={logo} height="30" width="80%" x="4" y="4"/>
                 <text x="4" y="49" fill="green">Max: {max}</text>
                 <path stroke="green" d="M5 52 l95 0" />

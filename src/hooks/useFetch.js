@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 
-const url = 'api/'  //need this in build version
-//const url = '/v8/finance/chart/' //need for development server
+//const url = 'api/'  //need this in build version
+const url = '/v8/finance/chart/' //need for development server
 
 export const useFetch = (params) => {
     const [data, setData] = useState('')
